@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUBHADIP DAS CONSTRUCTION</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    /* === GLOBAL STYLES === */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #222;
+      font-weight: 300;
+      line-height: 1.55;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* === HEADER === */
+    header {
+      background: #0d2744;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      width: 120px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    .btn-box { margin-top: 25px; }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 6px;
+      display: inline-block;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .primary { background: #d72626; color: #fff; }
+    .secondary { border: 2px solid #fff; color: #fff; }
+
+    .primary:hover { background: #b61f1f; }
+    .secondary:hover { background: #fff; color: #0d2744; }
+
+    /* === SECTIONS === */
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 60px 25px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #d72626;
+      margin-bottom: 8px;
+    }
+
+    p { margin: 6px 0; line-height: 1.5; }
+
+    /* === GRID LAYOUTS === */
+    .services-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #f4f8ff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(140, 20, 50, 0.22);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(140, 20, 50, 0.28);
+    }
+
+    /* === ABOUT === */
+    #about {
+      background: #f4f8ff;
+      box-shadow: inset 0 -25px 35px rgba(0,0,0,0.06);
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    #about > div {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    /* === PURPOSE & VALUES === */
+    #purpose {
+      box-shadow: inset 0 -25px 35px rgba(0,0,0,0.06);
+      margin-top: 20px;
+    }
+
+    #purpose > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    #purpose > div > div {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    #purpose .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    /* === QUALITY & SAFETY === */
+    #quality .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #quality .service-card img {
+      display: block;
+      width: 38px;
+      margin: 0 auto 16px;
+      transition: all 0.35s ease;
+    }
+
+    #quality .service-card:hover img {
+      filter: drop-shadow(0 0 10px rgba(0, 140, 255, 0.65));
+      transform: scale(1.08);
+    }
+
+    /* === WORKSHOP === */
+    #workshop {
+      margin-top: 60px;
+      background: #f4f8ff;
+      border: 1px solid #cdd8e6;
+      padding: 35px;
+      border-radius: 10px;
+      transition: all 0.35s ease;
+    }
+
+    #workshop:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+    }
+
+    #workshop li {
+      list-style: none;
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 6px;
+    }
+
+    #workshop li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #d72626;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    #workshop ul {
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px dotted #cdd8e6;
+    }
+
+    #workshop ul:last-of-type {
+      border-bottom: none;
+    }
+
+    /* === CONTACT === */
+    #contact {
+  background: #f4f8ff;
+  box-shadow: inset 0 -25px 35px rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 60px 25px;
+  margin-top: 50px; 
+    }
+
+    #contact img {
+      filter: sepia(1) saturate(5000%) hue-rotate(330deg);
+      width: 16px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    #contact a {
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #contact a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: #d72626;
+      transition: width 0.35s ease;
+    }
+
+    #contact a:hover::after {
+      width: 100%;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #0d2744;
+      color: #fff;
+      text-align: center;
+      padding: 35px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* === WHATSAPP FLOATING BUTTON === */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    /* === ANIMATIONS === */
+    html { scroll-behavior: smooth; }
+    .fade { opacity: 0; transform: translateY(20px); animation: fadeInUp .8s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      header h1 { font-size: 40px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      #quality .services-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 32px; }
+      header p { font-size: 16px; }
+      header img { width: 90px; left: 10px; top: 10px; }
+      .services-grid { grid-template-columns: 1fr; }
+      #purpose .values-grid { grid-template-columns: 1fr; }
+      section { padding: 40px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .btn { display: block; margin: 8px auto; }
+      .whatsapp-btn { bottom: 15px; right: 15px; padding: 12px 14px; }
+      header h1 { font-size: 26px; }
+      header p { font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="SDC Logo" />
+  <h1>SUBHADIP DAS CONSTRUCTION</h1>
+  <p>Delivering innovative solutions in Engineering, Procurement & Construction</p>
+  <div class="btn-box">
+    <a href="#services" class="btn primary">OUR SERVICES</a>
+    <a href="#contact" class="btn secondary">GET A QUOTE</a>
+  </div>
+</header>
+
+<section id="about">
+  <div>
+    <h2>ABOUT US</h2>
+    <p style="font-size:14px;font-weight:600;color:#222;">Engineering • Procurement • Construction</p>
+  </div>
+  <div>
+    <p>Subhadip Das Construction (SDC) delivers high-quality Engineering, Procurement and Construction (EPC) services across Oil & Gas, Petrochemical, Infrastructure and Industrial sectors. We specialize in execution of complex fabrication, erection, commissioning and maintenance projects with safety, quality and reliability.</p>
+  </div>
+</section>
+
+<section id="purpose">
+  <div>
+    <div>
+      <h2>OUR PURPOSE</h2>
+      <p>Delivering quality solutions safely for the industrial construction sector to build a sustainable future.</p>
+
+      <h2>OUR VISION</h2>
+      <p>To be a trusted leader in delivering safe, reliable, and high-quality industrial and infrastructure solutions, driven by innovation, skilled expertise, and a commitment to sustainability and long-term value creation.</p>
+
+      <h2>OUR MISSION</h2>
+      <p>Our mission is to execute every project with precision, safety, and professionalism. We focus on delivering superior workmanship, maintaining strong client relationships, empowering our workforce, and continuously improving our processes to achieve excellence in every project we undertake.</p>
+    </div>
+
+    <div>
+      <h2>OUR VALUES</h2>
+      <div class="values-grid">
+        <div><strong>Safety:</strong> We deliver world-class safety results and leave nothing to chance so everybody goes home safely.</div>
+        <div><strong>Teamwork:</strong> We work alongside our stakeholders and believe great teams can achieve incredible results.</div>
+        <div><strong>Integrity:</strong> We conduct our business with honesty, integrity, and transparency, maintaining high ethical standards.</div>
+        <div><strong>Accountability:</strong> We are accountable, and we deliver on our commitments.</div>
+        <div><strong>Sustainability:</strong> We strive to enhance environmental protection and contribute meaningfully to society.</div>
+        <div><strong>Innovation:</strong> We encourage new ideas, adopt modern technologies, and continuously improve our processes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>OUR CORE SERVICES</h2>
+  <div class="services-grid">
+    <div class="service-card"><h3>PIPING / PIPELINE PROJECTS</h3><p>We provide engineering, piping, and pipeline construction services that meet and exceed customer expectations. Our services cover construction of pipelines, fabrication, erection, hydro testing, non-destructive testing (NDT), commissioning & valves, on-line instruments erection and testing.</p></div>
+    <div class="service-card"><h3>ROOF DRAIN SYSTEM</h3><p>SDC Roof Drain System is designed to provide a superior solution to your floating roof tank drainage needs. Our reliable roof drain system ensures effective and safe roof drainage with maintenance-free and worry-free operation.</p></div>
+    <div class="service-card"><h3>STRUCTURAL STEEL FABRICATION & ERECTION</h3><p>We are a trusted builder of steel truss structures and industrial sheds. Our experienced team fabricates, erects and commissions structural sheds with sheeting safely, within budget and on schedule.</p></div>
+    <div class="service-card"><h3>BLASTING & INDUSTRIAL PAINTING</h3><p>We perform Copper slag / Grit / Sand blasting and industrial airless painting using standard quality paints. Our finishing provides high durability and corrosion-resistance in industrial conditions.</p></div>
+    <div class="service-card"><h3>CIVIL WORKS</h3><p>We execute RCC foundations, industrial floors, drains, boundary works, approach roads, retaining walls, and structural concrete works necessary for industrial and infrastructure projects.</p></div>
+    <div class="service-card"><h3>ELECTRICAL WORKS</h3><p>We execute HT/LT cabling, industrial and plant wiring, earthing system installation, cable tray installation, electrical panel installation, testing and commissioning.</p></div>
+  </div>
+</section>
+
+<section id="strengths">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:25px;">
+    <div style="flex:1;min-width:280px;">
+      <h2>OUR KEY STRENGTHS</h2>
+    </div>
+    <div style="flex:2;min-width:280px;">
+      <p>Engineering, Procurement and Fabrication services delivered by skilled multi-discipline teams using the latest modeling technologies. We maintain strong workforce capability including welders, riggers and fabrication professionals ensuring safe and high-quality execution.</p>
+    </div>
+  </div>
+</section>
+
+<section id="quality">
+  <h2>QUALITY & SAFETY</h2>
+  <div class="services-grid">
+    <div class="service-card"><h3><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="ISO Quality">QUALITY CONTROL</h3><p>All work is executed under strict inspection procedures with documented quality assurance, testing and certification processes. Dedicated QC engineers ensure compliance with industry standards and client specifications.</p></div>
+    <div class="service-card"><h3><img src="https://cdn-icons-png.flaticon.com/512/3105/3105789.png" alt="Safety">SAFETY MANAGEMENT</h3><p>Our team follows a zero-incident safety approach supported by toolbox training, work permit compliance, PPE enforcement and continuous risk assessment on site.</p></div>
+  </div>
+</section>
+
+<section id="workshop">
+  <h2>WORKSHOP EQUIPMENT & FACILITIES</h2>
+  <p>Our workshop is equipped with the following welding and mechanical fabrication machinery:</p>
+
+  <h3>WELDING EQUIPMENT</h3>
+  <ul>
+    <li>MIG Welding Machines (Metal Inert Gas)</li>
+    <li>FCAW Welding Machines (Flux Cored Arc Welding)</li>
+    <li>GTAW / TIG Welding Machines (Gas Tungsten Arc Welding)</li>
+    <li>SMAW Welding Machines (Shielded Metal Arc / Stick Welding)</li>
+  </ul>
+
+  <h3>FABRICATION & FORMING EQUIPMENT</h3>
+  <ul>
+    <li>Plate Rolling Machine (for forming cylindrical shells & curved plates)</li>
+    <li>Hydraulic / Mechanical Press Tools</li>
+    <li>Cutting Machines (Plasma / Gas / Mechanical)</li>
+  </ul>
+
+  <h3>AIR SUPPLY & SUPPORT EQUIPMENT</h3>
+  <ul>
+    <li>Air Compressors (suitable for Blasting, workshop pneumatic tools & operations)</li>
+    <li>Pneumatic Accessories & Tooling</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>CONTACT US</h2>
+  <p><strong><img src="https://cdn-icons-png.flaticon.com/512/535/535239.png"> Address:</strong> Near Sutahata Lavanya Prabha School, P.O - Sutahata, Haldia, East Medinipur, WB - 721635</p>
+  <p><strong><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"> Phone:</strong> 9474823724 / 6296313941</p>
+  <p><strong><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"> Email:</strong> <a href="mailto:sdc@subhadipdas.com">sdc@subhadipdas.com</a> | <a href="mailto:epc@subhadipdas.com">epc@subhadipdas.com</a></p>
+  <p><strong><img src="https://cdn-icons-png.flaticon.com/512/841/841364.png"> Website:</strong> <a href="https://www.subhadipdas.com" target="_blank">www.subhadipdas.com</a></p>
+</section>
+
+<footer>© SUBHADIP DAS CONSTRUCTION — All Rights Reserved</footer>
+
+<a href="https://wa.me/919474823724" class="whatsapp-btn">WhatsApp Us</a>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('fade');
+  });
+});
+document.querySelectorAll('section, .service-card').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
